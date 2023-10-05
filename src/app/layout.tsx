@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import { Provider } from "@/lib/Providers";
 import Link from "next/link";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], fallback: ["Segoe UI"] });
 
 export const metadata: Metadata = {
   title: "Slightly Techie - OKR",
