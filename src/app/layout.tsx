@@ -21,10 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Provider>
-          <div className="flex gap-4">
+          {/* <div className="flex gap-4">
             <Link href={"/api/auth/signout"}>sign out</Link>
             <Link href={"/okr"}>OKRs</Link>
-          </div>
+          </div> */}
 
           {children}
         </Provider>

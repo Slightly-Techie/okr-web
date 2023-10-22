@@ -1,6 +1,18 @@
+import axios from "axios";
 import { NextAuthOptions } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
+
+interface Account {
+  id_token: string;
+}
+
+interface User {
+  token: string;
+  id: number;
+  accessToken: string;
+  refreshToken: string;
+}
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -18,6 +30,40 @@ export const authOptions: NextAuthOptions = {
           response_type: "code",
         },
       },
+      httpOptions: {
+        timeout: 500000,
+      },
     }),
   ],
+  callbacks: {
+    async signIn({ account, user }: { account: any; user: any }) {
+      const { id_token } = account as Account;
+      const payload = {
+        credential: id_token,
+      };
+      const res = await axios.post(
+        "http://b6a5-41-139-18-158.ngrok-free.app/auth/login",
+        payload
+      );
+      console.log(res);
+      if (res.status === 200) {
+        const { Id, token, refresh_token } = res.data;
+        user.id = Id;
+        user.accessToken = token;
+        user.refreshToken = refresh_token;
+        return true;
+      }
+      return false;
+    },
+    async session({ session, user }) {
+      console.log("<----------------User---------->");
+      console.log(user);
+      // session.user = token.user;
+      // console.log(session);
+      return session;
+    },
+  },
+  pages: {
+    signIn: "/login",
+  },
 };

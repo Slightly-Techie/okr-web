@@ -1,6 +1,3 @@
-"use client";
-import { signIn } from "next-auth/react";
-
 export default function Home() {
   return (
     <main className=" w-full bg-primary-700 h-screen grid place-content-center">
