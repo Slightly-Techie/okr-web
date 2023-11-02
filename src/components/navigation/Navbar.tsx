@@ -33,7 +33,7 @@ const NavLinks = [
       {
         id: "O1",
         name: "All OKRs",
-        link: "/",
+        link: "/okr/all-okrs",
       },
       {
         id: "O2",
@@ -68,7 +68,7 @@ function Navbar({ children }: NavbarProps) {
       </nav>
       {/* Side Navbar */}
       <section className="flex w-full">
-        <nav className="hidden lg:block lg:w-[15%] h-[93vh] p-4 fixed top-[7vh] left-0 z-[40] border-r bg-primary-100 text-white">
+        <nav className="hidden lg:block lg:w-[15%] h-[93vh] p-4 fixed top-[7vh] left-0 z-[40] bg-primary-100 text-white">
           <section className="flex flex-col justify-between items-center h-full">
             {/* Top Section */}
             <section className="w-full">
@@ -77,9 +77,7 @@ function Navbar({ children }: NavbarProps) {
                   <section key={link.title} className="my-5">
                     <section className="flex items-center gap-3">
                       {link.icon}
-                      <p className="text-complementary font-bold text-sm">
-                        {link.title}
-                      </p>
+                      <p className="text-complementary text-sm">{link.title}</p>
                     </section>
                     <section className="flex flex-col gap-y-5 p-3">
                       {link.links.map((item) => {
@@ -116,7 +114,9 @@ function Navbar({ children }: NavbarProps) {
             </section>
           </section>
         </nav>
-        <section className="lg:pl-[15%] pt-[7vh]">{children}</section>
+        <section className="lg:pl-[15%] pt-[7vh] w-full">
+          <section className="w-full">{children}</section>
+        </section>
       </section>
       {/* Navbar for Mobile */}
       <section
