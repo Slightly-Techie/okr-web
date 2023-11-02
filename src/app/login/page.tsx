@@ -12,10 +12,10 @@ export default function Login() {
     <div className="grid grid-cols-[60%_40%] w-full relative max-h-screen h-screen overflow-hidden">
       <section className=" border bg-primary-base">
         <section className="  w-4/5 mx-auto py-5">
-          <h2 className=" text-3xl text-primary-100 py-3">
+          <h2 className=" text-3xl text-white font-bold py-3">
             A Game-Changing Approach to Goal Achievement
           </h2>
-          <p className=" text-primary-100">
+          <p className=" text-white">
             The simplest way to supercharge your workforce with OKRs
           </p>
           <div className=" absolute -left-[45%] top-[30%] ">
@@ -73,7 +73,7 @@ export default function Login() {
           </button>
         </div>
         <p className=" py-2">
-          Don't have an account?{" "}
+          Don&apos; t have an account?{" "}
           <Link href={"/signup"} className=" font-bold">
             Sign Up
           </Link>

@@ -38,6 +38,7 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async signIn({ account, user }: { account: any; user: any }) {
       const { id_token } = account as Account;
+      console.log(id_token);
       const payload = {
         credential: id_token,
       };
@@ -56,10 +57,7 @@ export const authOptions: NextAuthOptions = {
       return false;
     },
     async session({ session, user }) {
-      console.log("<----------------User---------->");
-      console.log(user);
-      // session.user = token.user;
-      // console.log(session);
+      session.user = user;
       return session;
     },
   },
