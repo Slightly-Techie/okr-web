@@ -38,7 +38,6 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async signIn({ account, user }: { account: any; user: any }) {
       const { id_token } = account as Account;
-      console.log(id_token);
       const payload = {
         credential: id_token,
       };
@@ -46,7 +45,6 @@ export const authOptions: NextAuthOptions = {
         "http://b6a5-41-139-18-158.ngrok-free.app/auth/login",
         payload
       );
-      console.log(res);
       if (res.status === 200) {
         const { Id, token, refresh_token } = res.data;
         user.id = Id;
