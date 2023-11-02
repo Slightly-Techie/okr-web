@@ -15,6 +15,9 @@ const config: Config = {
           400: "#045C47",
           700: "#033F30",
         },
+        accent:{
+          green:"#f8fffa"
+        },
         danger:"#C03026",
         success:"#34A853",
         pending:"#E5CF0D"
