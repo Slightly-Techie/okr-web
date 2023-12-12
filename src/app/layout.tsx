@@ -1,9 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import { Provider } from "@/lib/Providers";
 
-const inter = Inter({ subsets: ["latin"], fallback: ["Segoe UI"] });
+const font = Manrope({ subsets: ["latin"], fallback: ["Segoe UI"] });
 
 export const metadata: Metadata = {
   title: "Slightly Techie - OKR",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={font.className}>
         <Provider>{children}</Provider>
       </body>
     </html>
