@@ -71,9 +71,12 @@ function Header() {
                 </section>
                 <section className="flex my-5 gap-5 text-sm">
                   <button>
-                    <section className="bg-white text-primary-base w-full h-full px-4 py-2 flex items-center rounded">
+                    <Link
+                      href={"/auth/signup"}
+                      className="bg-white text-primary-base w-full h-full px-4 py-2 flex items-center rounded"
+                    >
                       Get Started{" "}
-                    </section>
+                    </Link>
                   </button>
                   <button className="border px-4 py-2 rounded">
                     Book A Demo
