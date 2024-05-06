@@ -4,6 +4,7 @@ import { FiLogOut, FiTarget } from "react-icons/fi";
 import { ReactNode, useState } from "react";
 import { AiOutlineMenu, AiOutlineHome, AiFillSetting } from "react-icons/ai";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type NavbarProps = {
   children: ReactNode;
@@ -17,12 +18,12 @@ const NavLinks = [
       {
         id: "h1",
         name: "Dashboard",
-        link: "/",
+        link: "/dashboard",
       },
       {
         id: "h2",
         name: "Alignments",
-        link: "/",
+        link: "/dashboard/alignments",
       },
     ],
   },
@@ -33,12 +34,12 @@ const NavLinks = [
       {
         id: "O1",
         name: "All OKRs",
-        link: "/okr/all-okrs",
+        link: "/dashboard/okrs/all-okrs",
       },
       {
         id: "O2",
         name: "Assigned to Me",
-        link: "/",
+        link: "/dashboard/okrs/assigned-to-me",
       },
     ],
   },
@@ -46,6 +47,8 @@ const NavLinks = [
 
 function Navbar({ children }: NavbarProps) {
   const [navIsOpen, setNavIsOpen] = useState<boolean>(false);
+  const pathname = usePathname();
+
   return (
     <section>
       {/* Top Navbar */}
@@ -74,15 +77,23 @@ function Navbar({ children }: NavbarProps) {
             <section className="w-full">
               {NavLinks.map((link) => {
                 return (
-                  <section key={link.title} className="my-5">
-                    <section className="flex items-center gap-3">
+                  <section key={link.title} className="my-3">
+                    <section className="flex items-center gap-3 ">
                       {link.icon}
                       <p className="text-complementary text-sm">{link.title}</p>
                     </section>
-                    <section className="flex flex-col gap-y-5 p-3">
+                    <section className="flex flex-col py-1 gap-y-3">
                       {link.links.map((item) => {
                         return (
-                          <Link href={item.link} key={item.id}>
+                          <Link
+                            href={item.link}
+                            key={item.id}
+                            className={`py-[6px] px-1 ${
+                              pathname === item.link
+                                ? "bg-primary-400 rounded-sm"
+                                : ""
+                            }`}
+                          >
                             <section className="flex items-center gap-3">
                               <p className="font-semibold text-sm">
                                 {item.name}
@@ -139,7 +150,11 @@ function Navbar({ children }: NavbarProps) {
                 <section className="flex flex-col gap-y-5 p-3">
                   {link.links.map((item) => {
                     return (
-                      <Link href={item.link} key={item.id}>
+                      <Link
+                        href={item.link}
+                        key={item.id}
+                        onClick={() => setNavIsOpen((prev) => !prev)}
+                      >
                         <section className="flex items-center gap-3">
                           <p className="font-semibold text-sm">{item.name}</p>
                         </section>
