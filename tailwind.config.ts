@@ -15,13 +15,14 @@ const config: Config = {
           400: "#045C47",
           700: "#033F30",
         },
-        accent:{
-          green:"#f8fffa",
-          white:"#F6F8FC"
+        accent: {
+          green: "#f8fffa",
+          white: "#F6F8FC",
         },
-        danger:"#C03026",
-        success:"#34A853",
-        pending:"#E5CF0D"
+        dark: "#1E1E1E",
+        danger: "#C03026",
+        success: "#34A853",
+        pending: "#E5CF0D",
       },
     },
   },
