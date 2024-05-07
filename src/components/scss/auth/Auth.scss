@@ -50,6 +50,14 @@
 					@apply bg-primary-base text-white py-[6px] mt-2 rounded-md;
 				}
 			}
+
+			.oauth-container {
+				@apply w-full flex flex-col gap-2;
+
+				> div {
+					@apply border flex justify-center border-[#C9C9C9] text-[#111926] py-2 rounded-md cursor-pointer;
+				}
+			}
 		}
 	}
 }
