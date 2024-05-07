@@ -1,4 +1,4 @@
-import localFont from "next/font/local";
+import localFont from 'next/font/local';
 
 // Font files can be colocated inside of `app`
 // const myFont = localFont({
@@ -7,9 +7,9 @@ import localFont from "next/font/local";
 // });
 
 export default function AuthLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-  return <aside>{children}</aside>;
+	return <aside>{children}</aside>;
 }

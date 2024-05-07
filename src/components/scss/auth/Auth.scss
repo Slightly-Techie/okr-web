@@ -1,0 +1,55 @@
+.page-container {
+	@apply w-screen flex;
+
+	.backdrop-bg {
+		@apply fixed inset-0 hidden md:flex z-0;
+
+		> div {
+			@apply w-1/2 bg-primary-100 relative;
+
+			img {
+				@apply w-[100%] h-[70%] absolute bottom-0 right-0;
+			}
+		}
+	}
+
+	.backdrop {
+		@apply w-1/2 text-white h-screen relative hidden md:block z-10;
+
+		> div {
+			@apply pt-6 pl-12 flex flex-col;
+
+			h1 {
+				@apply font-semibold text-2xl;
+			}
+
+			p {
+				@apply mt-2 text-lg;
+			}
+		}
+	}
+
+	.form-container {
+		@apply w-full md:w-1/2 h-screen z-10;
+
+		> article {
+			@apply flex flex-col gap-2 justify-center h-full w-4/5 mx-auto;
+
+			form {
+				@apply flex flex-col gap-2;
+
+				#email {
+					@apply mt-2 outline-none border border-[#9EA1AB] w-full h-8 px-2 text-[#9EA1AB] font-light placeholder:font-light  placeholder:text-[#9EA1AB] rounded-md;
+				}
+
+				#password, #password1, #password2 {
+					@apply mt-1 outline-none border border-[#9EA1AB] w-full h-8 px-2 text-[#9EA1AB] font-light placeholder:font-light  placeholder:text-[#9EA1AB] rounded-md;
+				}
+
+				button[type="submit"] {
+					@apply bg-primary-base text-white py-[6px] mt-2 rounded-md;
+				}
+			}
+		}
+	}
+}
