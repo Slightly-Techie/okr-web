@@ -10,10 +10,10 @@ export default function ForgotPassword() {
   function handleSubmit() {}
 
   return (
-    <main className="w-screen flex">
-      {" "}
+    <main className="w-screen flex max-w-container">
       <Backdrop />
-      <section className="w-full md:w-1/2 h-screen">
+      
+      <section className="w-full md:w-1/2 h-screen z-10">
         <article className="flex flex-col gap-2 justify-center h-full w-4/5 mx-auto">
           <Heading
             title="Forgot your password? 🤯"

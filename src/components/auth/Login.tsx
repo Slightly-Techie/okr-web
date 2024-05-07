@@ -25,10 +25,10 @@ function handleSubmit(e: FormEvent<HTMLFormElement>) {
 
 export default function Login() {
   return (
-    <main className="w-screen flex">
+    <main className="w-screen flex max-w-container">      
       <Backdrop />
 
-      <section className="w-full md:w-1/2 h-screen">
+      <section className="w-full md:w-1/2 h-screen z-10">
         <article className="flex flex-col gap-2 justify-center h-full w-4/5 mx-auto">
           <Heading
             title="Welcome to ST-OKR 🚀"
