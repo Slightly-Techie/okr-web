@@ -1,15 +1,15 @@
-import localFont from "next/font/local";
+import localFont from 'next/font/local';
 
 // Font files can be colocated inside of `app`
 const myFont = localFont({
-  src: "../../staticfont/Mona-Sans.woff2",
-  display: "swap",
+	src: '../../staticfont/Mona-Sans.woff2',
+	display: 'swap',
 });
 
 export default function AuthLayout({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-  return <aside className={myFont.className}>{children}</aside>;
+	return <aside className={myFont.className}>{children}</aside>;
 }
